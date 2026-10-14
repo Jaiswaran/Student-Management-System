@@ -13,7 +13,8 @@ public class Main{
             IO.println("1. Add StudentDetails ");
             IO.println("2. Display StudentDetails");
             IO.println("3. Search By Student Id");
-            IO.println("4. Exit");
+            IO.println("4. Delete Student By Id");
+            IO.println("5. Exit");
             Scanner sc = new Scanner(System.in);
             int user_in = sc.nextInt();
             
@@ -38,16 +39,23 @@ public class Main{
                     int id_2 = sc.nextInt();
                     s.searchById(id_2);
                     break;
+
                 case 4:
+                    IO.println("Enter Id: ");
+                    int id_3 = sc.nextInt();
+                    s.delete(id_3);
+                    break;
+            
+                case 5:
                     lock = false;
                     break;
 
             }
             }
         }catch(Exception e){
-            System.out.println("Error Occured: " + e.getMessage());
+            System.out.println("Try again and enter a valid answer");
         }
         
-        
+      
     }
 }

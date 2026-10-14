@@ -24,15 +24,22 @@ public class StudentDetails{
         }
     }
     public void searchById(int id){
-        boolean ans = false;
         for(Student s : students){
             if(s.id == id){
                 System.out.println("ID: " + s.id + " Name: " + s.name + " Marks: " + s.marks);
-                ans = true;
+                return;
             }
         }
-        if(ans == false){
-            System.out.println("Not Found");
+        IO.println("Not Found");
+    }
+    public void delete(int id){
+        for(Student s : students){
+            if(s.id == id){
+                students.remove(s);
+                IO.println(s.id + "Removed sucessfully");
+                return;
+            }
         }
+        IO.println("Not Found");
     }
 }
