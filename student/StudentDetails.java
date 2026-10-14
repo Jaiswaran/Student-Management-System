@@ -1,5 +1,5 @@
 package student;
-import java.util.*;
+import java.util.ArrayList;
 
 class Student{
     int id;
@@ -15,6 +15,7 @@ class Student{
 
 public class StudentDetails{
     ArrayList<Student> students = new ArrayList<>();
+    
     public void addStudent(int id, String name, int marks){
         students.add(new Student(id, name, marks));
     }
@@ -41,5 +42,16 @@ public class StudentDetails{
             }
         }
         IO.println("Not Found");
+    }
+    public void highestMarks(){
+        int highestMarks = 0;
+        String name = "";
+        for(Student s : students){
+            if(s.marks > highestMarks){
+                highestMarks = s.marks;
+                name = s.name;
+            }
+        }
+        System.out.println(name + " got the highest marks: " + highestMarks);
     }
 }

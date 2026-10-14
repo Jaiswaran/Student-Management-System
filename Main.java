@@ -5,6 +5,11 @@ public class Main{
     public static void main(String[] args) {
         boolean lock = true;
         StudentDetails s = new StudentDetails();
+        s.addStudent(100, "Jai", 80);
+        s.addStudent(101, "Rohan", 90);
+        s.addStudent(102, "Rahul", 100);
+        s.addStudent(103, "Alex", 70);
+        s.addStudent(104, "Priya", 60);
         
         try{
             while(lock){
@@ -14,7 +19,8 @@ public class Main{
             IO.println("2. Display StudentDetails");
             IO.println("3. Search By Student Id");
             IO.println("4. Delete Student By Id");
-            IO.println("5. Exit");
+            IO.println("5. Search the highest mark");
+            IO.println("6. Exit");
             Scanner sc = new Scanner(System.in);
             int user_in = sc.nextInt();
             
@@ -45,9 +51,14 @@ public class Main{
                     int id_3 = sc.nextInt();
                     s.delete(id_3);
                     break;
-            
+
                 case 5:
+                    s.highestMarks();
+                    break;
+            
+                case 6:
                     lock = false;
+                    System.out.println("Exited Successfully !");
                     break;
 
             }
