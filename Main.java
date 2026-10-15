@@ -7,15 +7,15 @@ public class Main{
         boolean lock = true;
         StudentDetails s = new StudentDetails();
         //Some students are added
-        s.addStudent(100, "Jai", 80);
+        s.addStudent(156, "Jai", 80);
         s.addStudent(101, "Rohan", 90);
-        s.addStudent(102, "Rahul", 100);
-        s.addStudent(103, "Alex", 70);
-        s.addStudent(104, "Priya", 60);
+        s.addStudent(105, "Rahul", 100);
+        s.addStudent(150, "Alex", 70);
+        s.addStudent(50, "Priya", 60);
         
         try{
             while(lock){
-            
+            IO.println();
             IO.println("Choose the method: ");
             IO.println("1. Add StudentDetails ");
             IO.println("2. Display StudentDetails");
@@ -24,6 +24,7 @@ public class Main{
             IO.println("5. Search the highest mark");
             IO.println("6. Get the Average Marks");
             IO.println("7. Exit");
+            IO.println();
             Scanner sc = new Scanner(System.in);
             int user_in = sc.nextInt();
             

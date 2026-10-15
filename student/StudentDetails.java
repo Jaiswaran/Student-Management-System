@@ -28,6 +28,8 @@ public class StudentDetails{
             System.out.println("ID: " + s.id + " Name: " + s.name + " Marks: " + s.marks);
         }
     }
+    // Implemented Binary Search
+    // Time Complexity = O(logn)
     public void searchById(int id){
         // Sort the arraylist on basis of ID's
         students.sort(Comparator.comparingInt(s -> s.id));
@@ -55,16 +57,18 @@ public class StudentDetails{
             System.out.println(id + " Not Found");
         }
     }
+    //Delete Student by Id
     public void delete(int id){
         for(Student s : students){
             if(s.id == id){
                 students.remove(s);
-                IO.println(s.id + "Removed sucessfully");
+                IO.println(s.id + " Removed sucessfully");
                 return;
             }
         }
         IO.println("Not Found");
     }
+    //Get the highest Marks
     public void highestMarks(){
         int highestMarks = 0;
         String name = "";
@@ -76,14 +80,16 @@ public class StudentDetails{
         }
         System.out.println(name + " got the highest marks: " + highestMarks);
     }
+    //Get the class Average
     public void classAvg(){
-        int count = 0;
+        int count = students.size();
         int sum = 0;
         
         for(Student s : students){
-            count = count + 1;
-            sum = sum + s.id;
+
+            sum = sum + s.marks;
         }
         int avg = sum / count;
+        System.out.println("Class Average is: " + avg);
     }
 }
