@@ -3,8 +3,10 @@ import student.*;
 
 public class Main{
     public static void main(String[] args) {
+        //lock is designed to exit the program in the while loop
         boolean lock = true;
         StudentDetails s = new StudentDetails();
+        //Some students are added
         s.addStudent(100, "Jai", 80);
         s.addStudent(101, "Rohan", 90);
         s.addStudent(102, "Rahul", 100);
@@ -20,7 +22,8 @@ public class Main{
             IO.println("3. Search By Student Id");
             IO.println("4. Delete Student By Id");
             IO.println("5. Search the highest mark");
-            IO.println("6. Exit");
+            IO.println("6. Get the Average Marks");
+            IO.println("7. Exit");
             Scanner sc = new Scanner(System.in);
             int user_in = sc.nextInt();
             
@@ -57,6 +60,10 @@ public class Main{
                     break;
             
                 case 6:
+                    s.classAvg();
+                    break;
+
+                case 7:
                     lock = false;
                     System.out.println("Exited Successfully !");
                     break;
