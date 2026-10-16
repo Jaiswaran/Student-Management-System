@@ -2,6 +2,7 @@ package student;
 import java.util.ArrayList;
 import java.util.Comparator;
 
+
 class Student{
     int id;
     String name;
@@ -90,5 +91,26 @@ public class StudentDetails{
         }
         int avg = sum / count;
         System.out.println("Class Average is: " + avg);
+    }
+    // Used to compute the mean, variance, standard deviation.
+    public void statistics(){
+        double total = students.size();
+        double sum = 0;
+        
+        for(Student s : students){
+            sum = sum + s.marks;
+        }
+        double avg = sum / total;
+
+        double var_num = 0;
+        for(Student s : students){
+            var_num = var_num + (s.marks - avg) * (s.marks - avg);
+        }
+        double var = var_num / total;
+        double sd_deviation = Math.sqrt(var);
+        IO.println("Statistics");
+        System.out.printf("Variance: %.5f\n", var);
+        System.out.printf("Mean: %.5f\n", avg);
+        System.out.printf("Standard Deviation: %.5f\n", sd_deviation);
     }
 }
