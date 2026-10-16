@@ -86,7 +86,6 @@ public class StudentDetails{
         int sum = 0;
         
         for(Student s : students){
-
             sum = sum + s.marks;
         }
         int avg = sum / count;

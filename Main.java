@@ -12,7 +12,7 @@ public class Main{
         s.addStudent(105, "Rahul", 100);
         s.addStudent(150, "Alex", 70);
         s.addStudent(50, "Priya", 60);
-        
+        IO.println("Student Management: ");
         try{
             while(lock){
             IO.println();
