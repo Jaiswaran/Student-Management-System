@@ -23,7 +23,8 @@ public class Main{
             IO.println("4. Delete Student By Id");
             IO.println("5. Search the highest mark");
             IO.println("6. Get the Average Marks");
-            IO.println("7. Exit");
+            IO.println("7. Get Statistics");
+            IO.println("8. Exit");
             IO.println();
             Scanner sc = new Scanner(System.in);
             int user_in = sc.nextInt();
@@ -63,8 +64,11 @@ public class Main{
                 case 6:
                     s.classAvg();
                     break;
-
+                
                 case 7:
+                    s.statistics();
+                    break;
+                case 8:
                     lock = false;
                     System.out.println("Exited Successfully !");
                     break;
