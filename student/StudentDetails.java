@@ -16,7 +16,7 @@ class Student{
 }
 
 public class StudentDetails{
-    ArrayList<Student> students = new ArrayList<>();
+    ArrayList<Student> students = new ArrayList<>(); // Contaains id, name, marks
     
     public void addStudent(int id, String name, int marks){
         students.add(new Student(id, name, marks));
@@ -70,16 +70,19 @@ public class StudentDetails{
         IO.println("Not Found");
     }
     //Get the highest Marks
-    public void highestMarks(){
-        int highestMarks = 0;
-        String name = "";
+    public void highestMarkStudent(){
+        int highestMark = 0;
+        
+        
         for(Student s : students){
-            if(s.marks > highestMarks){
-                highestMarks = s.marks;
-                name = s.name;
+            if(s.marks > highestMark){
+                highestMark = s.marks;
+            }
+            if(s.marks == highestMark){
+                IO.println(s.name + " got the highest marks " + s.marks);
+                IO.println();
             }
         }
-        System.out.println(name + " got the highest marks: " + highestMarks);
     }
     //Get the class Average
     public void classAvg(){
@@ -92,7 +95,7 @@ public class StudentDetails{
         int avg = sum / count;
         System.out.println("Class Average is: " + avg);
     }
-    // Used to compute the mean, variance, standard deviation.
+    // Used to compute the Mean, Variance, Standard Deviation, Pass Percentage.
     public void statistics(){
         double total = students.size();
         double sum = 0;
@@ -112,5 +115,22 @@ public class StudentDetails{
         System.out.printf("Variance: %.5f\n", var);
         System.out.printf("Mean: %.5f\n", avg);
         System.out.printf("Standard Deviation: %.5f\n", sd_deviation);
+
+        double no_of_students = students.size();
+        double pass_marks = 40; // 40 marks is the pass mark.
+        double passed = 0; // Number of students passed the exam.
+        for(Student s : students){
+            if(s.marks >= pass_marks){
+                passed++;
+            }
+        }
+        double not_passed = no_of_students - passed;
+        double pass_percent = (passed / no_of_students) * 100;
+        double fail_percent = (not_passed / no_of_students) * 100;
+
+        IO.println("Pass Percentage is: " + pass_percent);
+        IO.println("Fail Percentage is: " + fail_percent);
+
+
     }
 }
