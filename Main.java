@@ -7,11 +7,18 @@ public class Main{
         boolean lock = true;
         StudentDetails s = new StudentDetails();
         //Some students are added
-        s.addStudent(156, "Jai", 80);
+        s.addStudent(156, "Jai", 95);
         s.addStudent(101, "Rohan", 90);
-        s.addStudent(105, "Rahul", 100);
+        s.addStudent(105, "Rahul", 95);
         s.addStudent(150, "Alex", 70);
-        s.addStudent(50, "Priya", 60);
+        s.addStudent(804, "Amaran", 60);
+        s.addStudent(630, "Bishnoi", 20);
+        s.addStudent(890, "Rajendra", 10);
+        s.addStudent(950, "Hari", 26);
+        s.addStudent(606, "Smith", 40);
+        s.addStudent(703, "Rossie", 35);
+        s.addStudent(107, "James", 50);
+        s.addStudent(560, "Kamala", 5);
         IO.println("Student Management: ");
         try{
             while(lock){
@@ -58,7 +65,7 @@ public class Main{
                     break;
 
                 case 5:
-                    s.highestMarks();
+                    s.highestMarkStudent();
                     break;
             
                 case 6:
