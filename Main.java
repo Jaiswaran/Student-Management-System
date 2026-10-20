@@ -3,10 +3,11 @@ import student.*;
 
 public class Main{
     public static void main(String[] args) {
-        //lock is designed to exit the program in the while loop
-        boolean lock = true;
+        
+        boolean lock = true; //lock is designed to exit the program in the while loop
         StudentDetails s = new StudentDetails();
-        //Some students are added
+        Attendance a = new Attendance();
+        //Some students are added in Student Detail Class
         s.addStudent(156, "Jai", 95);
         s.addStudent(101, "Rohan", 90);
         s.addStudent(105, "Rahul", 95);
@@ -19,6 +20,14 @@ public class Main{
         s.addStudent(703, "Rossie", 35);
         s.addStudent(107, "James", 50);
         s.addStudent(560, "Kamala", 5);
+
+        a.addStudent(156, "Jai", 95);
+        a.addStudent(101, "Rohan", 90.56);
+        a.addStudent(105, "Rahul", 20.58);
+        a.addStudent(150, "Alex", 56.8);
+        a.addStudent(804, "Amaran", 75.623);
+        a.addStudent(630, "Bishnoi", 45.6);
+        a.addStudent(890, "Rajendra", 89.563);
         IO.println("Student Management: ");
         try{
             while(lock){
@@ -31,7 +40,8 @@ public class Main{
             IO.println("5. Search the highest mark");
             IO.println("6. Get the Average Marks");
             IO.println("7. Get Statistics");
-            IO.println("8. Exit");
+            IO.println("8. Attendance");
+            IO.println("9. Exit");
             IO.println();
             Scanner sc = new Scanner(System.in);
             int user_in = sc.nextInt();
@@ -76,6 +86,9 @@ public class Main{
                     s.statistics();
                     break;
                 case 8:
+                    a.display();
+                    break;
+                case 9:
                     lock = false;
                     System.out.println("Exited Successfully !");
                     break;
