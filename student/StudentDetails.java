@@ -80,7 +80,6 @@ public class StudentDetails{
             }
             if(s.marks == highestMark){
                 IO.println(s.name + " got the highest marks " + s.marks);
-                IO.println();
             }
         }
     }
