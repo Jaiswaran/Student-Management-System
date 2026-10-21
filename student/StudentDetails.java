@@ -23,10 +23,12 @@ public class StudentDetails{
     }
     //Display the students in the arraylist
     public void display(){
-        // Sort the arraylist on basis of ID's
+        // Sort the arraylist on basis of ID's 
         students.sort(Comparator.comparingInt(s -> s.id));
         for(Student s : students){
+            IO.println("--------------------------");
             System.out.println("ID: " + s.id + " Name: " + s.name + " Marks: " + s.marks);
+            IO.println("--------------------------");
         }
     }
     // Implemented Binary Search
