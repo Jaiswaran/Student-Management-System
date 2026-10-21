@@ -86,7 +86,33 @@ public class Main{
                     s.statistics();
                     break;
                 case 8:
-                    a.display();
+                    boolean l = true;
+                    while(l){
+                        IO.println("Selct Options: ");
+                        IO.println("1. Add Students");
+                        IO.println("2. Display Students");
+                        IO.println("3. Exit");
+                        int user_choice = sc.nextInt();
+                        switch(user_choice){
+                            case 1:
+                                IO.println("Enter Id: ");
+                                int id_a = sc.nextInt();
+                                IO.println("Enter Name: ");
+                                String name_a = sc.next();
+                                IO.println("Enter Attendance: ");
+                                double attendance = sc.nextDouble();
+    
+                                a.addStudent(id_a, name_a, attendance);
+                                break;
+                            case 2:
+                                a.display();
+                                break;
+                            case 3:
+                                IO.println("Exited From Attendance Module");
+                                l = false;
+                                break;
+                        } 
+                    }
                     break;
                 case 9:
                     lock = false;

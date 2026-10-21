@@ -19,9 +19,11 @@ public class Attendance {
     }
     public void display(){
         for(Student_a s : students){
+            IO.println("--------------------------");
             IO.println("Id: " + s.id);
             IO.println("Name: " + s.name);
             IO.println("Attendance: " + s.attendance);
+            IO.println("--------------------------");
         }
     }
 
