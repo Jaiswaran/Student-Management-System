@@ -91,7 +91,9 @@ public class Main{
                         IO.println("Selct Options: ");
                         IO.println("1. Add Students");
                         IO.println("2. Display Students");
-                        IO.println("3. Exit");
+                        IO.println("3. Debared List");
+                        IO.println("4. Search Attendance By Id");
+                        IO.println("5. Exit");
                         int user_choice = sc.nextInt();
                         switch(user_choice){
                             case 1:
@@ -108,6 +110,14 @@ public class Main{
                                 a.display();
                                 break;
                             case 3:
+                                a.debarList();
+                                break;
+                            case 4:
+                                IO.println("Enter Id: ");
+                                int idForAttandance = sc.nextInt();
+                                a.searchAttendanceById(idForAttandance);
+                                break;
+                            case 5:
                                 IO.println("Exited From Attendance Module");
                                 l = false;
                                 break;
@@ -117,6 +127,7 @@ public class Main{
                 case 9:
                     lock = false;
                     System.out.println("Exited Successfully !");
+                    sc.close();
                     break;
 
             }
@@ -125,6 +136,6 @@ public class Main{
             System.out.println("Try again and enter a valid answer");
         }
         
-      
+        
     }
 }
