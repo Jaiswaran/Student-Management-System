@@ -28,6 +28,11 @@ public class Main{
         a.addStudent(804, "Amaran", 75.623);
         a.addStudent(630, "Bishnoi", 45.6);
         a.addStudent(890, "Rajendra", 89.563);
+        a.addStudent(950, "Hari", 100);
+        a.addStudent(606, "Smith", 100);
+        a.addStudent(703, "Rossie", 100);
+        a.addStudent(107, "James", 100.00);
+        a.addStudent(560, "Kamala", 100);
         IO.println("Student Management: ");
         try{
             while(lock){
@@ -93,7 +98,8 @@ public class Main{
                         IO.println("2. Display Students");
                         IO.println("3. Debared List");
                         IO.println("4. Search Attendance By Id");
-                        IO.println("5. Exit");
+                        IO.println("5. 100% Attendance Scorers");
+                        IO.println("6. Exit");
                         int user_choice = sc.nextInt();
                         switch(user_choice){
                             case 1:
@@ -118,6 +124,9 @@ public class Main{
                                 a.searchAttendanceById(idForAttandance);
                                 break;
                             case 5:
+                                a.highestAttendance();
+                                break;
+                            case 6:
                                 IO.println("Exited From Attendance Module");
                                 l = false;
                                 break;

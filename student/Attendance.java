@@ -65,5 +65,16 @@ public class Attendance {
             System.out.println(id + " Not Found");
         }
     }
+    public void highestAttendance(){
+        IO.println("Full Attendance Scorers:");
+        for(Student_a s : students){
+            if(s.attendance == 100){
+                IO.println("----------------------------");
+                IO.println("Id: " + s.id);
+                IO.println("Name: " + s.name);
+                IO.println("----------------------------");
+            }
+        }
+    }
     
 }
