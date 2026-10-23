@@ -99,7 +99,8 @@ public class Main{
                         IO.println("3. Debared List");
                         IO.println("4. Search Attendance By Id");
                         IO.println("5. 100% Attendance Scorers");
-                        IO.println("6. Exit");
+                        IO.println("6. 100% Attendance Scorers");
+                        IO.println("7. Exit");
                         int user_choice = sc.nextInt();
                         switch(user_choice){
                             case 1:
@@ -127,6 +128,13 @@ public class Main{
                                 a.highestAttendance();
                                 break;
                             case 6:
+                                IO.println("Enter the ID: ");
+                                int sId = sc.nextInt();
+                                IO.println("Enter the new attendance: ");
+                                int newAttendance = sc.nextInt();
+                                a.updateAttendanceByID(sId, newAttendance);
+                                break;
+                            case 7:
                                 IO.println("Exited From Attendance Module");
                                 l = false;
                                 break;

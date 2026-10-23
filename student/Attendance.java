@@ -28,6 +28,7 @@ public class Attendance {
         }
     }
     public void debarList(){
+        
         for(Student_a s : students){
             if(s.attendance < 75){
                 IO.println("Debared Status: ");
@@ -74,6 +75,28 @@ public class Attendance {
                 IO.println("Name: " + s.name);
                 IO.println("----------------------------");
             }
+        }
+    }
+    public void updateAttendanceByID(int id, double newAttendance){
+        students.sort(Comparator.comparingInt(s -> s.id)); // Sorting based on the id's of the students.
+        // Implementing binary search to find id to reduce time complexity to logn.
+        int low = 0;
+        int high = students.size() - 1;
+        boolean found = false;
+        while(low <= high){
+            int mid = (low + high)/2;
+            if(students.get(mid).id == id){
+                students.get(mid).attendance = newAttendance;
+                found = true;
+                break;
+            }else if(students.get(mid).id < id){
+                low = mid + 1;
+            }else{
+                high = mid - 1;
+            }
+        }
+        if(!found){
+            System.out.println(id + " Not Found");
         }
     }
     
