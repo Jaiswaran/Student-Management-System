@@ -61,15 +61,35 @@ public class StudentDetails{
         }
     }
     //Delete Student by Id
-    public void delete(int id){
-        for(Student s : students){
-            if(s.id == id){
-                students.remove(s);
-                IO.println(s.id + " Removed sucessfully");
-                return;
+    public void delete(int id) {
+        students.sort(Comparator.comparingInt(s -> s.id));
+
+        int low = 0;
+        int high = students.size() - 1;
+        boolean found = false;
+
+        while (low <= high) {
+            int mid = (low + high) / 2;
+
+            if (students.get(mid).id == id) {
+                String name = students.get(mid).name;
+
+                students.remove(mid);
+                found = true;
+
+                System.out.println("ID: " + id + " removed successfully!");
+                System.out.println("Name: " + name);
+                break;
+            } else if (students.get(mid).id < id) {
+                low = mid + 1;
+            } else {
+                high = mid - 1;
             }
         }
-        IO.println("Not Found");
+
+        if (!found) {
+            System.out.println(id + " Not Found");
+        }
     }
     //Get the highest Marks
     public void highestMarkStudent(){
