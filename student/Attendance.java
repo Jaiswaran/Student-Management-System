@@ -77,6 +77,7 @@ public class Attendance {
             }
         }
     }
+    //Used binary searh algorithm
     public void updateAttendanceByID(int id, double newAttendance){
         students.sort(Comparator.comparingInt(s -> s.id)); // Sorting based on the id's of the students.
         // Implementing binary search to find id to reduce time complexity to logn.
@@ -99,5 +100,6 @@ public class Attendance {
             System.out.println(id + " Not Found");
         }
     }
+    
     
 }
