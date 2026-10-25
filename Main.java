@@ -4,7 +4,6 @@ import student.*;
 public class Main{
     public static void main(String[] args) {
         
-        boolean lock = true; //lock is designed to exit the program in the while loop
         StudentDetails s = new StudentDetails();
         Attendance a = new Attendance();
         //Some students are added in Student Detail Class
@@ -35,7 +34,7 @@ public class Main{
         a.addStudent(560, "Kamala", 100);
         IO.println("Student Management: ");
         try{
-            while(lock){
+            while(true){
             IO.println();
             IO.println("Choose the method: ");
             IO.println("1. Add StudentDetails ");
@@ -91,8 +90,7 @@ public class Main{
                     s.statistics();
                     break;
                 case 8:
-                    boolean l = true;
-                    while(l){
+                    while(true){
                         IO.println("Selct Options: ");
                         IO.println("1. Add Students");
                         IO.println("2. Display Students");
@@ -136,16 +134,14 @@ public class Main{
                                 break;
                             case 7:
                                 IO.println("Exited From Attendance Module");
-                                l = false;
-                                break;
+                                return;
                         } 
                     }
                     break;
                 case 9:
-                    lock = false;
                     System.out.println("Exited Successfully !");
                     sc.close();
-                    break;
+                    return;
 
             }
             }
