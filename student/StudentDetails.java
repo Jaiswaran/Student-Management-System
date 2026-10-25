@@ -60,7 +60,7 @@ public class StudentDetails{
             System.out.println(id + " Not Found");
         }
     }
-    //Delete Student by Id
+    // In this binary search is implemented.
     public void delete(int id) {
         students.sort(Comparator.comparingInt(s -> s.id));
 
