@@ -137,7 +137,6 @@ public class Main{
                                 return;
                         } 
                     }
-                    break;
                 case 9:
                     System.out.println("Exited Successfully !");
                     sc.close();
